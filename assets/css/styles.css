@@ -1,0 +1,774 @@
+/* 1. Reset/Normalização */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Estilos Globais */
+body {
+  padding-top: 140px;
+  font-family: "Georgia", serif;
+  background-color: #fdfaf4;
+  color: #7d6652;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+/* 3. Layout Principal */
+
+/* Estilo do header */
+/* Header fixo no topo */
+header {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 1rem 0;
+  position: fixed; /* Torna o header fixo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Garante que ele esteja acima de outros elementos */
+}
+
+/* Container geral do header */
+/* Ajustes no container geral do header */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+}
+
+/* Logo */
+.logo h1 {
+  font-size: 1.8rem;
+  color: #d4b57f;
+  font-weight: 300; /* Tornar a fonte mais delgada */
+  text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5); /* Sombra para simular brilho */
+}
+
+/* Ajustes para centralizar a data do casamento */
+.wedding-date {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: #7d6652;
+  white-space: nowrap; /* Evita que a data quebre em duas linhas */
+}
+
+/* Menu Navbar */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: #7d6652;
+  font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+  color: #d4b57f;
+}
+
+/* 4. Componentes */
+
+/* Ícone de menu hamburguer (mobile) */
+.mobile-menu-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+  z-index: 1001; /* Para que fique acima do menu */
+}
+
+.menu-bar {
+  height: 3px;
+  width: 100%;
+  background-color: #7d6652;
+  margin: 2px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Menu mobile escondido por padrão */
+/* Transição suave para o menu */
+#mainNav {
+  display: none;
+  opacity: 0; /* Invisível por padrão */
+  transition: opacity 0.5s ease; /* Transição suave */
+}
+
+/* Importação da fonte e estilo dos nomes do casal */
+/* Contêiner da imagem do casal */
+.couple-image-container {
+  position: relative; /* Necessário para posicionar elementos dentro do contêiner */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+/* Imagem do casal */
+.couple-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+/* Nome Víctor - lado esquerdo acima do homem */
+.couple-name-left {
+  position: absolute;
+  top: 5%; /* Ajuste o valor para elevar os nomes */
+  left: 20%;
+  font-size: 2.5rem;
+  color: #7d6652;
+  font-family: "Dancing Script", cursive;
+  text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5);
+  transform: rotate(-2deg);
+}
+
+/* Nome Daniela - lado direito acima da mulher */
+.couple-name-right {
+  position: absolute;
+  top: 5%; /* Ajuste o valor para elevar os nomes */
+  right: 20%;
+  font-size: 2.5rem;
+  color: #7d6652;
+  font-family: "Dancing Script", cursive;
+  text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5);
+  transform: rotate(2deg);
+}
+
+/* Mensagem de casamento */
+.wedding-message {
+  text-align: center;
+  margin: 2rem 1rem;
+  color: #7d6652;
+}
+
+/* Título da mensagem de casamento */
+.wedding-title {
+  font-size: 2.5rem;
+  color: #d4b57f;
+  font-family: "Dancing Script", cursive;
+  text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+/* Parágrafo da mensagem de casamento */
+.wedding-message p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  font-family: "Georgia", serif;
+}
+
+/* Estilo para o símbolo & */
+.ampersand {
+  position: absolute;
+  top: 5%; /* Ajuste conforme necessário */
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  font-size: 1.5rem; /* Ajuste o tamanho conforme necessário */
+  color: #d4b57f;
+  font-family: "Dancing Script", cursive;
+  text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Reprodutor de música fixo abaixo do header, com fundo translúcido */
+.music-player {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: fixed;
+  top: 80px; /* Ajustado para ficar mais perto do header */
+  left: 10px;
+  width: 20%;
+  z-index: 999;
+  padding: 0.5rem 0;
+  background-color: transparent; /* Fundo completamente transparente */
+}
+
+/* Controles do reprodutor de música */
+.player-controls {
+  display: flex;
+  align-items: center;
+  background-color: rgba(
+    255,
+    239,
+    213,
+    0.3
+  ); /* Fundo branco translúcido mais leve */
+  padding: 0.5rem 1rem;
+  border-radius: 16px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Ícone de música */
+.music-icon svg {
+  fill: #7d6652;
+  margin-right: 10px;
+}
+
+/* Botões de play/pause */
+.play-button,
+.pause-button {
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.play-button svg,
+.pause-button svg {
+  fill: #d4b57f;
+  width: 25px;
+  height: 25px;
+  transition: transform 0.3s ease;
+}
+
+/* Esconder elementos */
+.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+/* Estilo da seção da contagem regressiva */
+#countdown-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+#countdown {
+  font-family: "Georgia", serif;
+  color: #7d6652; /* Cor do texto */
+}
+
+#countdown p {
+  font-size: 1.5rem;
+  color: #7d6652;
+  margin-bottom: 10px;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espaçamento horizontal entre os blocos */
+}
+
+.countdown-timer div {
+  display: flex;
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center;
+}
+
+.countdown-timer span {
+  font-family: "Dancing Script", cursive; /* Fonte para os números */
+  font-size: 2.5rem; /* Tamanho maior para os números */
+  font-weight: bold;
+  color: #d4b57f; /* Cor dos números */
+}
+
+.countdown-timer small {
+  font-family: "Georgia", serif; /* Fonte para o texto */
+  font-size: 1rem; /* Tamanho do texto abaixo dos números */
+  color: #7d6652; /* Cor do texto */
+}
+
+/* Seção de Localização */
+#ceremony-location,
+#reception-location {
+  text-align: center;
+  margin: 2rem 1rem;
+  padding: 2rem 0;
+  background-color: #fff9f0;
+  color: #7d6652;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+
+.location-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.5rem;
+  color: #d4b57f;
+  margin-bottom: 1rem;
+}
+
+.map-container {
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.map-button {
+  display: inline-block;
+  margin: 1rem auto;
+  background-color: #d4b57f;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.map-button:hover {
+  background-color: #c2a06e;
+}
+
+@media (max-width: 768px) {
+  .map-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Ícones de mapa e visão */
+.map-icon,
+.view-icon {
+  display: inline-flex;
+  margin: 0 10px;
+  padding: 5px;
+  background-color: #d4b57f;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: white;
+}
+
+.map-icon:hover,
+.view-icon:hover {
+  transform: scale(1.1); /* Aumenta o ícone quando passa o mouse */
+  background-color: #c2a06e; /* Muda a cor ao passar o mouse */
+}
+
+/* Ícone SVG */
+.map-icon svg,
+.view-icon svg {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+/* Para garantir o alinhamento correto dos ícones no mobile */
+@media (max-width: 768px) {
+  .map-icon,
+  .view-icon {
+    margin: 10px 0;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+}
+
+/* 5. Responsividade */
+
+/* Menu mobile - Estilos para quando o menu está visível */
+@media (max-width: 768px) {
+  /* Mostra o ícone de menu hamburguer no mobile */
+  .mobile-menu-icon {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
+  }
+
+  /* Quando o menu estiver visível, ele cobre a tela inteira */
+  #mainNav.visible {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    text-align: center;
+  }
+
+  /* Menu mobile: Estilo dos links */
+  nav ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  nav ul li a {
+    font-size: 1.5rem;
+    color: #7d6652;
+  }
+
+  nav ul li a:hover {
+    color: #d4b57f;
+  }
+
+  .wedding-date {
+    position: relative;
+    left: auto;
+    transform: none;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem; /* Ajuste do tamanho da fonte */
+    font-weight: 300; /* Tornar a fonte mais delgada */
+    text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5); /* Sombra para simular brilho */
+  }
+
+  .couple-name-left,
+  .couple-name-right {
+    font-size: 1.5rem; /* Reduz o tamanho da fonte para telas menores */
+    font-weight: 300; /* Tornar a fonte mais delgada */
+    top: 0%; /* Ajusta o posicionamento vertical para telas menores */
+  }
+}
+
+/* 6. Animações */
+
+/* Visibilidade padrão para elementos com fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* Os elementos começam 20px abaixo */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transição suave */
+}
+
+/* Quando o elemento entra em cena */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0); /* O elemento volta à posição original */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quando o menu estiver visível */
+#mainNav.visible {
+  display: flex;
+  opacity: 1; /* Transição suave ao aparecer */
+}
+
+.play-button:hover svg,
+.pause-button:hover svg {
+  transform: scale(1.1); /* Efeito de leve zoom ao passar o mouse */
+}
+
+/* Section for leaving a message */
+
+/* Estilo para a seção de mensagens */
+#message-list {
+  text-align: center;
+  padding: 20px;
+}
+
+.message-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #704214; /* Cor do título */
+}
+
+.message-description {
+  font-size: 16px;
+  color: #704214;
+  margin-bottom: 20px;
+}
+
+/* Estilo do ícone e botão */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.open-form-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.open-form-btn svg {
+  stroke: #f5c6a5;
+  width: 40px;
+  height: 40px;
+  transition: stroke 0.3s ease;
+}
+
+.open-form-btn:hover svg {
+  stroke: #e5b092;
+}
+
+#mensajes {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #fff9f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#mensajes h3 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  color: #d4b57f;
+  margin-bottom: 1rem;
+}
+
+#messageForm label {
+  font-size: 1.1rem;
+  color: #7d6652;
+}
+
+#messageForm input,
+#messageForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #d4b57f;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#messageForm button {
+  padding: 10px 20px;
+  background-color: #d4b57f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#messageForm button:hover {
+  background-color: #c2a06e;
+}
+
+/* Message list styling */
+
+.message-list .message {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fdfaf4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message-list .message h4 {
+  font-size: 1.2rem;
+  color: #d4b57f;
+  margin-bottom: 0.5rem;
+}
+
+.message-list .message p {
+  font-size: 1rem;
+  color: #7d6652;
+}
+
+/* Button to load more messages */
+#loadMoreBtn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #d4b57f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#loadMoreBtn:hover {
+  background-color: #c2a06e;
+}
+
+/* Responsiveness for mobile */
+@media (max-width: 768px) {
+  #mensajes {
+    padding: 1.5rem;
+  }
+
+  #mensajes h3 {
+    font-size: 1.8rem;
+  }
+
+  #messageForm button,
+  #loadMoreBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .message-list .message {
+    padding: 0.8rem;
+  }
+}
+
+/* Estilo do botão de abrir o formulário */
+
+.open-form-btn:hover {
+  background-color: #e5b092;
+}
+/* Estilo geral do formulário */
+.edit-message {
+  background-color: #fff;
+  width: 100%;
+  height: 100%; /* Ocupar toda a tela */
+  max-width: none; /* Remover limite de largura */
+  max-height: none; /* Remover limite de altura */
+  margin: 0;
+  padding: 20px;
+  border-radius: 0; /* Remover cantos arredondados */
+  box-shadow: none;
+  font-family: "Arial", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: none; /* Remover translate */
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-y: auto; /* Permitir rolagem no conteúdo */
+}
+
+/* Botão de fechar (X) */
+.close-form {
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Estilo dos campos de input */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Estilo dos botões */
+.submit-btn,
+.send-card-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.submit-btn {
+  background-color: #c47c65;
+  color: white;
+}
+
+.send-card-btn {
+  background-color: transparent;
+  color: #c47c65;
+  border: 1px solid #c47c65;
+}
+
+.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Estilo da seção do carrossel */
+.carousel-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.message h4 {
+  font-size: 18px;
+  color: #704214;
+  margin-bottom: 5px;
+}
+
+.message p {
+  font-size: 16px;
+  color: #704214;
+}
+
+/* Botões de navegação do carrossel */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.2; /* Tornar as setas mais sutis */
+}
+
+.carousel-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  opacity: 1;
+}
+
+.carousel-button.prev {
+  left: 5px;
+}
+
+.carousel-button.next {
+  right: 5px;
+}

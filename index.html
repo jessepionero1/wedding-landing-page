@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda de Víctor y Daniela</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1>V&D</h1>
+            </div>
+
+
+            <!-- Data do casamento -->
+            <div class="wedding-date">
+                <p>14.12.24</p>
+            </div>
+
+            <!-- Ícone de menu hamburguer (aparece no mobile) -->
+            <div class="mobile-menu-icon" id="menuIcon">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </div>
+
+            <!-- Navbar -->
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#victor-daniela">Los Novios</a></li>
+                    <li><a href="#countdown-section">Cuenta Regresiva</a></li>
+                    <li><a href="#ceremony-location">Ceremonia</a></li>
+                    <li><a href="#reception-location">Recepción</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="music-player fade-in">
+        <div class="player-controls">
+            <!-- Icone de música -->
+            <div class="music-icon">
+                <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"></path>
+                </svg>
+            </div>
+            <!-- Botão Play -->
+            <div class="play-button" id="play-button">
+                <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4.59999997 1.19999996v21.60000004c0 .7911658.87524595 1.2690074 1.54075759.8411785l16.80000004-10.8c.6123232-.3936364.6123232-1.2887206 0-1.682357l-16.80000004-10.80000002c-.66551164-.42782891-1.54075759.05001268-1.54075759.84117848z">
+                    </path>
+                </svg>
+            </div>
+            <!-- Botão Pause -->
+            <div class="pause-button hidden" id="pause-button">
+                <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.33333332.33333329c.55228475 0 .99999998.44771525.99999998 1v21.33333341c0 .5522848-.44771523 1-.99999998 1h-5.33333335c-.55228475 0-1-.4477152-1-1v-21.33333341c0-.55228475.44771525-1 1-1zm10.66666668 0c.5522848 0 1 .44771525 1 1v21.33333341c0 .5522848-.4477152 1-1 1h-5.3333333c-.5522848 0-1-.4477152-1-1v-21.33333341c0-.55228475.4477152-1 1-1z">
+                    </path>
+                </svg>
+            </div>
+            <!-- Player de áudio embutido -->
+            <audio id="wedding-music" loop>
+                <source src="assets/audio/musica-boda.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+
+
+    <main>
+        <!-- Seção Víctor y Daniela -->
+        <section id="victor-daniela">
+
+            <div class="couple-image-container fade-in" style="text-align: center;">
+                <h2 class="couple-name-left">Víctor</h2>
+                <h2 class="ampersand">&</h2> <!-- Adiciona o símbolo entre os nomes -->
+                <h2 class="couple-name-right">Daniela</h2>
+                <img src="assets/img/couple.png" alt="Imagem do casal Víctor e Daniela" class="couple-image">
+            </div>
+
+
+            <div class="wedding-message fade-in">
+                <h3 class="wedding-title">¡Nos casamos!</h3>
+                <p>El día más esperado de nuestras vidas finalmente ha llegado. Acompáñenos en nuestra boda y sean parte
+                    de nuestra historia de amor.</p>
+            </div>
+
+        </section>
+
+
+        <section id="countdown-section">
+            <div id="countdown" class="fade-in">
+                <p>Faltan:</p>
+                <div class="countdown-timer">
+                    <div>
+                        <span id="days">00</span>
+                        <small>dias</small>
+                    </div>
+                    <div>
+                        <span id="hours">00</span>
+                        <small>horas</small>
+                    </div>
+                    <div>
+                        <span id="minutes">00</span>
+                        <small>minutos</small>
+                    </div>
+                    <div>
+                        <span id="seconds">00</span>
+                        <small>segundos</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção para a Localização da Cerimônia -->
+        <section id="ceremony-location">
+            <h3 class="location-title fade-in">Ceremonia Religiosa</h3>
+            <p>Nos complace invitarlos a nuestra boda religiosa, que se llevará a cabo:</p>
+            <p><strong>Sábado, 14 de diciembre de 2024 - Templo Don Bosco (Zona Villa México)</strong></p>
+
+            <p><strong>Horas: 11:30 AM</strong></p>
+
+            <!-- Container para os ícones -->
+
+            <!-- Ícone de rota -->
+            <a href="#" onclick="openGoogleMapsApp('Templo+Don+Bosco+Cochabamba+Bolivia')" class="map-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-map-pin">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </a>
+
+            <!-- Ícone de visão de outra perspectiva -->
+            <a href="https://maps.app.goo.gl/RvPNcFmCvKPkaxLQ7" target="_blank" class="view-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-eye">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+            </a>
+
+
+
+            <!-- Google Maps Embed para a Cerimônia -->
+            <div class="map-container"
+                style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 16px; overflow: hidden;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d951.6430863536932!2d-66.15552744907762!3d-17.43229924129837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e373cd07fa6c4d%3A0x41ec358c8ecade91!2sTemplo%20Don%20Bosco!5e0!3m2!1spt-BR!2sbr!4v1728759816472!5m2!1spt-BR!2sbr"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- Seção para a Localização da Recepción -->
+        <section id="reception-location" class="fade-in">
+            <h3 class="location-title">Recepción Social</h3>
+            <p>Pasada la ceremonia, tenemos el agrado de invitarles a la recepción social en:</p>
+            <p><strong>Salón Eventos Rosedal</strong></p>
+            <p>Avenida Panamericana, entrada a Itocta, Zona Sud, Cochabamba, Bolivia</p>
+
+
+            <!-- Ícone de rota -->
+            <a href="#" onclick="openGoogleMapsApp('Eventos+Rosedal+Cochabamba+Bolivia')" class="map-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-map-pin">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </a>
+
+            <!-- Ícone de visão de outra perspectiva -->
+            <a href="https://maps.app.goo.gl/GzmkqqM9nwNE3v3u7" target="_blank" class="view-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-eye">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+            </a>
+
+
+
+            <!-- Google Maps Embed para a Recepción -->
+            <div class="map-container"
+                style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 16px; overflow: hidden;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1131.5582243935808!2d-66.17599659764285!3d-17.455261450807388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e3730018c4c6f9%3A0x5209722dff89be6b!2sEVENTOS%20ROSEDAL!5e0!3m2!1spt-BR!2sbr!4v1728759143952!5m2!1spt-BR!2sbr"
+                    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+
+        <section id="message-list" class="carousel-section fade-in">
+            <h3 class="message-title">Mensajes de amigos y familiares</h3>
+            <p class="message-description">Deja tu recado aquí y prometemos leer con mucho cariño.</p>
+
+
+            <div class="icon-container">
+                <!-- Ícone para abrir o formulário -->
+                <button id="openFormBtn" class="open-form-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-edit-2">
+                        <path d="M17 3a2.828 2.828 0 1 1 4 4L7 21l-4 1 1-4L17 3z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel fade-in">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- As mensagens serão inseridas dinamicamente aqui -->
+                    </div>
+                </div>
+
+                <!-- Botões de navegação do carrossel -->
+                <button class="carousel-button prev" id="prevBtn">&#10094;</button>
+                <button class="carousel-button next" id="nextBtn">&#10095;</button>
+            </div>
+
+        </section>
+
+
+        <!-- Formulário escondido por padrão -->
+        <section id="edit-message-form" class="edit-message hidden">
+            <div class="form-header">
+                <h3>Deja un mensaje especial para los novios</h3>
+                <span class="close-form">&times;</span> <!-- Botão de fechar -->
+            </div>
+
+            <form id="messageEditForm">
+                <label for="fromName">De *</label>
+                <input type="text" id="fromName" value="" required>
+
+                <label for="toName">A *</label>
+                <input type="text" id="toName" value="Victor & Daniela" required disabled>
+
+                <label for="message">Mensaje *</label>
+                <!-- Campo de textarea e contador de caracteres -->
+                <textarea id="message" rows="4" maxlength="300" required></textarea>
+                <div class="char-count"><span id="charCount">0</span></div>
+
+
+                <button type="submit" class="submit-btn">Ok, enviar mensaje</button>
+            </form>
+        </section>
+
+
+
+
+    </main>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
