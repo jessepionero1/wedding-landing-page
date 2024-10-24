@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Higuen Serif";
+  src: url("../font/Higuen Serif.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #503d05;
+  --tercer-color: #846815;
+  --font-family: "Higuen Serif", sans-serif; /* Usar o nome da fonte correta */
+}
+
 /* 1. Reset/Normalização */
 * {
   margin: 0;
@@ -8,10 +21,16 @@
 /* 2. Estilos Globais */
 body {
   padding-top: 140px;
-  font-family: "Georgia", serif;
+  font-family: var(--font-family);
   background-color: #fdfaf4;
   color: #7d6652;
   line-height: 1.6;
+
+  /* Configuração da imagem de fundo */
+  background-image: url("/assets/img/fundo.jpg");
+  background-size: cover; /* Faz com que a imagem cubra toda a área, ajustando as proporções */
+  background-position: center; /* Centraliza a imagem */
+  background-attachment: fixed; /* A imagem fica fixa ao rolar a página */
 }
 
 a {
@@ -50,9 +69,8 @@ header {
 /* Logo */
 .logo h1 {
   font-size: 1.8rem;
-  color: #d4b57f;
+  color: var(--tercer-color);
   font-weight: 300; /* Tornar a fonte mais delgada */
-  text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5); /* Sombra para simular brilho */
 }
 
 /* Ajustes para centralizar a data do casamento */
@@ -61,7 +79,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
   font-size: 1.2rem;
-  color: #7d6652;
+  color: var(--tercer-color);
   white-space: nowrap; /* Evita que a data quebre em duas linhas */
 }
 
@@ -131,11 +149,10 @@ nav ul li a:hover {
 .couple-name-left {
   position: absolute;
   top: 5%; /* Ajuste o valor para elevar os nomes */
-  left: 20%;
+  left: 10%;
   font-size: 2.5rem;
-  color: #7d6652;
-  font-family: "Dancing Script", cursive;
-  text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5);
+  font-family: var(--font-family);
+  color: var(--primary-color);
   transform: rotate(-2deg);
 }
 
@@ -143,11 +160,10 @@ nav ul li a:hover {
 .couple-name-right {
   position: absolute;
   top: 5%; /* Ajuste o valor para elevar os nomes */
-  right: 20%;
+  right: 10%;
   font-size: 2.5rem;
-  color: #7d6652;
-  font-family: "Dancing Script", cursive;
-  text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5);
+  font-family: var(--font-family);
+  color: var(--primary-color);
   transform: rotate(2deg);
 }
 
@@ -155,15 +171,14 @@ nav ul li a:hover {
 .wedding-message {
   text-align: center;
   margin: 2rem 1rem;
-  color: #7d6652;
+  color: var(--primary-color);
 }
 
 /* Título da mensagem de casamento */
 .wedding-title {
   font-size: 2.5rem;
-  color: #d4b57f;
-  font-family: "Dancing Script", cursive;
-  text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5);
+  color: var(--tercer-color);
+  font-family: var(--font-family);
   margin-bottom: 1rem;
 }
 
@@ -172,19 +187,18 @@ nav ul li a:hover {
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 0.5rem;
-  font-family: "Georgia", serif;
+  font-family: var(--font-family);
 }
 
 /* Estilo para o símbolo & */
 .ampersand {
   position: absolute;
-  top: 5%; /* Ajuste conforme necessário */
+  top: 0%; /* Ajuste conforme necessário */
   left: 50%;
   transform: translateX(-50%) rotate(0deg);
   font-size: 1.5rem; /* Ajuste o tamanho conforme necessário */
-  color: #d4b57f;
-  font-family: "Dancing Script", cursive;
-  text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5);
+  color: var(--primary-color);
+  font-family: var(--font-family);
 }
 
 /* Reprodutor de música fixo abaixo do header, com fundo translúcido */
@@ -250,8 +264,7 @@ nav ul li a:hover {
 }
 
 #countdown {
-  font-family: "Georgia", serif;
-  color: #7d6652; /* Cor do texto */
+  color: var(--tercer-color); /* Cor do texto */
 }
 
 #countdown p {
@@ -273,16 +286,14 @@ nav ul li a:hover {
 }
 
 .countdown-timer span {
-  font-family: "Dancing Script", cursive; /* Fonte para os números */
   font-size: 2.5rem; /* Tamanho maior para os números */
   font-weight: bold;
-  color: #d4b57f; /* Cor dos números */
+  color: #b4a475; /* Cor dos números */
 }
 
 .countdown-timer small {
-  font-family: "Georgia", serif; /* Fonte para o texto */
   font-size: 1rem; /* Tamanho do texto abaixo dos números */
-  color: #7d6652; /* Cor do texto */
+  color: var(--primary-color); /* Cor do texto */
 }
 
 /* Seção de Localização */
@@ -292,15 +303,13 @@ nav ul li a:hover {
   margin: 2rem 1rem;
   padding: 2rem 0;
   background-color: #fff9f0;
-  color: #7d6652;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: var(--primary-color);
   border-radius: 16px;
 }
 
 .location-title {
-  font-family: "Dancing Script", cursive;
-  font-size: 2.5rem;
-  color: #d4b57f;
+  font-size: 2rem;
+  color: var(--tercer-color);
   margin-bottom: 1rem;
 }
 
@@ -377,6 +386,11 @@ nav ul li a:hover {
 
 /* Menu mobile - Estilos para quando o menu está visível */
 @media (max-width: 768px) {
+  body {
+    background-size: contain; /* Em telas menores, a imagem será contida dentro da tela */
+    background-attachment: scroll; /* A imagem rola junto com o conteúdo */
+  }
+
   /* Mostra o ícone de menu hamburguer no mobile */
   .mobile-menu-icon {
     display: flex;
@@ -427,14 +441,13 @@ nav ul li a:hover {
   .logo h1 {
     font-size: 1.5rem; /* Ajuste do tamanho da fonte */
     font-weight: 300; /* Tornar a fonte mais delgada */
-    text-shadow: 1px 1px 5px rgba(255, 215, 0, 0.5); /* Sombra para simular brilho */
   }
 
   .couple-name-left,
   .couple-name-right {
-    font-size: 1.5rem; /* Reduz o tamanho da fonte para telas menores */
+    font-size: 2rem; /* Reduz o tamanho da fonte para telas menores */
     font-weight: 300; /* Tornar a fonte mais delgada */
-    top: 0%; /* Ajusta o posicionamento vertical para telas menores */
+    top: -10%; /* Ajusta o posicionamento vertical para telas menores */
   }
 }
 
