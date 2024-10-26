@@ -35,7 +35,7 @@ body {
   line-height: 1.6;
 
   /* Configuração da imagem de fundo */
-  background-image: url("/assets/img/fundo.jpg");
+  background-image: url("../img/fundo.jpg");
   background-size: cover; /* Faz com que a imagem cubra toda a área, ajustando as proporções */
   background-position: center; /* Centraliza a imagem */
   background-attachment: fixed; /* A imagem fica fixa ao rolar a página */
