@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boda de Víctor y Daniela</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -35,9 +33,12 @@
             <nav id="mainNav">
                 <ul>
                     <li><a href="#victor-daniela">Los Novios</a></li>
+                    <li><a href="#blessing-section">Bendición de los Padres</a></li>
                     <li><a href="#countdown-section">Cuenta Regresiva</a></li>
-                    <li><a href="#ceremony-location">Ceremonia</a></li>
+                    <li><a href="#thank-you-section">Agradecimiento a los Padrinos</a></li>
+                    <li><a href="#ceremony-location">Ceremonia Religiosa</a></li>
                     <li><a href="#reception-location">Recepción</a></li>
+                    <li><a href="#message-list">Mensajes de Felicitaciones</a></li>
                 </ul>
             </nav>
         </div>
@@ -69,7 +70,7 @@
             </div>
             <!-- Player de áudio embutido -->
             <audio id="wedding-music" loop>
-                <source src="assets/audio/musica-boda1.mp3" type="audio/mpeg">
+                <source src="assets/audio/musica-boda.mp3" type="audio/mpeg">
             </audio>
         </div>
     </div>
@@ -93,13 +94,30 @@
                 <p>El día más esperado de nuestras vidas finalmente ha llegado. Acompáñenos en nuestra boda y sean parte
                     de nuestra historia de amor.</p>
             </div>
+        </section>
 
+        <!-- Seção Bênção dos Pais -->
+        <section id="blessing-section" class="wedding-blessing fade-slide-in">
+
+            <h2>Con la gracia de Dios y la bendición de nuestros padres</h2>
+            <p class="description-blessing">Deseamos compartir con ustedes el inicio de nuestro camino juntos.</p>
+            <div class="parents-blessing-container">
+                <div class="parents-left">
+                    <p>Edwin Torrez Carrasco</p>
+                    <p>Primitiva Chambi</p>
+                </div>
+                <div class="separator"></div>
+                <div class="parents-right">
+                    <p>Mario Atahuichi Choque</p>
+                    <p>Gladys Hidalgo Galarza</p>
+                </div>
+            </div>
         </section>
 
 
         <section id="countdown-section">
             <div id="countdown" class="fade-in">
-                <p>Faltan:</p>
+                <h2>Faltan:</h2>
                 <div class="countdown-timer">
                     <div>
                         <span id="days">00</span>
@@ -120,6 +138,46 @@
                 </div>
             </div>
         </section>
+
+
+        <!-- Seção de Agradecimiento a los Padrinos -->
+        <section id="thank-you-section" class="thank-you-section fade-in">
+            <h3 class="thank-you-title">Agradecimiento a Nuestros Padrinos</h3>
+            <p class="thank-you-description">Hay momentos en la vida que son especiales por sí solos, compartirlos con
+                las personas que quieres los convierte en momentos inolvidables.</p>
+
+            <div class="thank-you-content two-columns">
+                <div class="thank-you-group">
+                    <h4 class="thank-you-subtitle">Padrinos de Religión</h4>
+                    <ul class="thank-you-list">
+                        <li class="padrino-hombre">Armando Davila Cruz</li>
+                        <li class="padrino-mujer">Esther Quispe Angulo</li>
+                    </ul>
+                </div>
+                <div class="thank-you-group">
+                    <h4 class="thank-you-subtitle">Padrinos de Aro</h4>
+                    <ul class="thank-you-list">
+                        <li class="padrino-hombre">Vicente López Agostopa</li>
+                        <li class="padrino-mujer">Beatriz Torrez Carrasco</li>
+                    </ul>
+                </div>
+                <div class="thank-you-group">
+                    <h4 class="thank-you-subtitle">Padrinos de Civil</h4>
+                    <ul class="thank-you-list">
+                        <li class="padrino-hombre">Moises Choque Cuizara</li>
+                        <li class="padrino-mujer">Lilian Torrez Carrasco</li>
+                    </ul>
+                </div>
+                <div class="thank-you-group">
+                    <h4 class="thank-you-subtitle">Madrina de Sorpresa</h4>
+                    <ul class="thank-you-list">
+                        <li class="padrino-mujer">Gladys Torrez Carrasco</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
 
         <!-- Seção para a Localização da Cerimônia -->
         <section id="ceremony-location">

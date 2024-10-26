@@ -9,6 +9,14 @@
   --primary-color: #503d05;
   --tercer-color: #846815;
   --font-family: "Higuen Serif", sans-serif; /* Usar o nome da fonte correta */
+  --green-blessing-color: #7a8c61;
+  --elegant-pink: #c08081; /* Rosa elegante, suave e sofisticado */
+
+  /* Cores adicionais sugeridas */
+  --blue-gray: #78909c; /* Azul acinzentado, para equilíbrio e contraste */
+  --lavender-soft: #b49fcc; /* Lavanda suave, para detalhes românticos */
+  --taupe: #a49393; /* Cinza amadeirado, neutro e elegante */
+  --champagne-soft: #f7e3b3; /* Champanhe suave, para detalhes de fundo */
 }
 
 /* 1. Reset/Normalização */
@@ -125,7 +133,8 @@ nav ul li a:hover {
 #mainNav {
   display: none;
   opacity: 0; /* Invisível por padrão */
-  transition: opacity 0.5s ease; /* Transição suave */
+  transform: translateY(-20px); /* Inicia 20px acima */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
 }
 
 /* Importação da fonte e estilo dos nomes do casal */
@@ -201,6 +210,65 @@ nav ul li a:hover {
   font-family: var(--font-family);
 }
 
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Inicia abaixo da posição original */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Volta à posição original */
+  }
+}
+
+/* Aplicando a animação à seção */
+.wedding-blessing.fade-slide-in {
+  animation: fadeSlideIn 1.5s ease-in-out forwards;
+}
+
+/* Estilo para a seção da bênção dos pais */
+.wedding-blessing {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 2rem 0;
+  color: var(--tercer-color);
+  font-family: var(--font-family);
+}
+/* Estilo para a seção da bênção dos pais */
+.description-blessing {
+  text-align: center;
+  color: var(--primary-color);
+  font-family: var(--font-family);
+}
+
+.parents-blessing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem; /* Ajuste de margem para espaçamento adequado */
+}
+
+.parents-left,
+.parents-right {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-family: var(--font-family);
+  color: var(--green-blessing-color);
+  font-weight: bold; /* Destaque adicional com negrito, se desejar */
+}
+.parents-left p:nth-child(2),
+.parents-right p:nth-child(2) {
+  color: var(--elegant-pink); /* Aplicando o rosa elegante aos nomes das mães */
+  font-weight: bold; /* Destaque adicional com negrito, se desejar */
+}
+
+.separator {
+  height: 100%;
+  width: 1px;
+  background-color: var(--primary-color);
+  margin: 0 2rem; /* Espaçamento entre os nomes dos pais */
+}
+
 /* Reprodutor de música fixo abaixo do header, com fundo translúcido */
 .music-player {
   display: flex;
@@ -249,6 +317,70 @@ nav ul li a:hover {
   width: 25px;
   height: 25px;
   transition: transform 0.3s ease;
+}
+
+/* Estilo para os nomes dos padrinhos e madrinhas */
+.padrino-hombre {
+  color: var(--green-blessing-color); /* Cor igual à dos pais dos noivos */
+  font-weight: bold;
+}
+
+.padrino-mujer {
+  color: var(--elegant-pink); /* Cor igual à dos nomes das mães */
+  font-weight: bold; /* Destaque adicional com negrito */
+}
+
+/* Estilo para a seção de agradecimento */
+.thank-you-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.thank-you-title {
+  font-size: 1.5rem;
+  color: var(--tercer-color);
+  margin-bottom: 1rem;
+}
+
+.thank-you-description {
+  font-size: 1, 1rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+/* Estilo para as colunas dos padrinhos */
+.thank-you-content.two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Estilo para cada grupo de padrinhos */
+.thank-you-group {
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Estilo para os subtítulos dos padrinhos */
+.thank-you-subtitle {
+  font-size: 1.1rem;
+  color: var(--tercer-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Estilo para a lista de padrinhos */
+.thank-you-list {
+  list-style: none;
+  padding: 0;
+}
+
+.thank-you-list li {
+  font-size: 1rem;
+  margin: 0.5rem 0;
 }
 
 /* Esconder elementos */
@@ -302,9 +434,7 @@ nav ul li a:hover {
   text-align: center;
   margin: 2rem 1rem;
   padding: 2rem 0;
-  background-color: #fff9f0;
   color: var(--primary-color);
-  border-radius: 16px;
 }
 
 .location-title {
@@ -485,6 +615,7 @@ html {
 #mainNav.visible {
   display: flex;
   opacity: 1; /* Transição suave ao aparecer */
+  transform: translateY(0); /* Volta à posição original */
 }
 
 .play-button:hover svg,
@@ -501,16 +632,15 @@ html {
 }
 
 .message-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #704214; /* Cor do título */
+  font-size: 1.6rem;
+  color: var(--tercer-color);
+  margin-bottom: 1rem;
 }
 
 .message-description {
-  font-size: 16px;
-  color: #704214;
-  margin-bottom: 20px;
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
 }
 
 /* Estilo do ícone e botão */
@@ -535,6 +665,12 @@ html {
 
 .open-form-btn:hover svg {
   stroke: #e5b092;
+}
+
+.form-header {
+  margin: 1.5rem;
+  color: var(--tercer-color);
+  font-family: var(--font-family);
 }
 
 #mensajes {
@@ -729,8 +865,6 @@ textarea {
   max-width: 800px;
   margin: 0 auto;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
 }
 
 .carousel-track {
@@ -740,22 +874,20 @@ textarea {
 
 .carousel-item {
   min-width: 100%;
-  box-sizing: border-box;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: transparent !important;
 }
 
 .message h4 {
-  font-size: 18px;
-  color: #704214;
+  font-size: 1.5rem;
+  color: var(--primary-color);
   margin-bottom: 5px;
 }
 
 .message p {
-  font-size: 16px;
-  color: #704214;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--blue-gray);
 }
 
 /* Botões de navegação do carrossel */
@@ -774,14 +906,14 @@ textarea {
 }
 
 .carousel-button:hover {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--champagne-soft);
   opacity: 1;
 }
 
 .carousel-button.prev {
-  left: 5px;
+  left: 1rem;
 }
 
 .carousel-button.next {
-  right: 5px;
+  right: 1rem;
 }

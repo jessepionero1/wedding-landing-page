@@ -185,8 +185,12 @@ document.querySelectorAll("nav a").forEach((anchor) => {
     const targetElement = document.getElementById(targetId);
 
     // Ajustar o scroll para compensar a altura do cabeçalho
+    const cardMusicHeight =
+      document.querySelector(".music-player").offsetHeight;
+
     const headerHeight = document.querySelector("header").offsetHeight;
-    const targetPosition = targetElement.offsetTop - headerHeight;
+    const targetPosition =
+      targetElement.offsetTop - headerHeight - cardMusicHeight;
 
     window.scrollTo({
       top: targetPosition,
@@ -363,3 +367,16 @@ function cleanForm() {
   document.getElementById("messageEditForm").reset();
   document.getElementById("charCount").textContent = "0/300";
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-slide-in");
+      }
+    });
+  });
+
+  const blessingSection = document.querySelector(".wedding-blessing");
+  observer.observe(blessingSection);
+});
