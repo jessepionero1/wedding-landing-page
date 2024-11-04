@@ -94,8 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Definir a data e hora do casamento
-  var weddingDate = new Date(Date.UTC(2024, 10, 30, 15, 30, 0)).getTime();
+  var weddingDate = new Date(Date.UTC(2024, 10, 30, 17, 30, 0)).getTime();
 
   // Função que atualiza a contagem regressiva a cada segundo
   var countdownFunction = setInterval(function () {
