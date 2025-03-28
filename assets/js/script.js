@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Função para iniciar a música e alternar os botões
   function startMusic() {
-    audio.volume = 0.1;
+    audio.volume = 1.0;
     audio
       .play()
       .then(function () {
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  var weddingDate = new Date(Date.UTC(2024, 10, 30, 17, 30, 0)).getTime();
+  var weddingDate = new Date(Date.UTC(2025, 05, 30, 17, 30, 0)).getTime();
 
   // Função que atualiza a contagem regressiva a cada segundo
   var countdownFunction = setInterval(function () {
@@ -379,3 +379,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const blessingSection = document.querySelector(".wedding-blessing");
   observer.observe(blessingSection);
 });
+
+function processarLinhaDigitavel(linhaDigitavel) {
+  const fatorDeVencimento = parseInt(linhaDigitavel.slice(33, 37), 10);
+  const valorCentavos = parseInt(linhaDigitavel.slice(37, 47), 10) / 100;
+
+  // Calcular a data de vencimento
+  const dataBase = new Date(1997, 9, 7); // 07/10/1997
+  const dataVencimento = new Date(
+    dataBase.getTime() + fatorDeVencimento * 24 * 60 * 60 * 1000
+  );
+
+  console.log("Fator de Vencimento:", fatorDeVencimento);
+  console.log(
+    "Data de Vencimento:",
+    dataVencimento.toLocaleDateString("pt-BR")
+  );
+  console.log("Valor do Boleto: R$", valorCentavos.toFixed(2));
+}
+
+// Teste com a linha digitável fornecida
+processarLinhaDigitavel("818400000044346457012410010110001718315100299005");
